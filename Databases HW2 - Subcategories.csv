@@ -1,0 +1,28 @@
+Subcategory_ID,Category_ID,Subcategory_Name,Description
+1,1,Vitamins,"A, B6,B12,C,D, and others named like magnesium glycinate"
+2,1,Supplements,Anything in a Vitamin Shoppe or GNC
+3,2,Feminine Hygeine,"Imagining razors, tampons, pads, other various products"
+4,2,Deoderant,Stick and Spray
+5,2,Shampoo,Hair Chemicals
+6,2,Toothpaste,Teeth Chemicals
+7,2,Skincare,Skin Chemicals
+8,2,Baby Products,"Diapers, other various Baby products"
+9,2,Toilet paper/Paper towels,Do these really need to be organic and non megacorp backed
+10,3,Cereal,Yummy grains with high fructose corn syrup
+11,3,Chips & Snacks,Pretty self-explanatory
+12,3,Baby Food,Children Chemicals
+13,3,Baby Formula,Children Chemicals Pt. 2?
+14,3,Pasta Sauce,Ragu and probably some others
+15,3,Pickles,Pickles
+16,3,Coffee,"Beans, K-cups, ground"
+17,3,Candy,"All sweet things, mius chocolate"
+18,3,Chocolate,Here's the missing candy companies
+19,3,Frozen Pizza,Digiornos and others
+20,3,Juice,"Fruit, Vegetable Juices"
+21,3,Cheese,Just cheese
+22,3,Drinks,"Various beverages, don't believe alcohol is included"
+23,3,Sauces & Dressings,Salad toppings
+24,3,Energy Drinks,"Monster, Red Bull, C4?"
+25,3,Ice Cream,"Turkey Hill, Breyer's, Ben&Jerry's?"
+26,3,Tea,English beverage
+27,3,Crackers,Goes well with cheese

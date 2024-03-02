@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Ownership Database</title>
+    <!-- Add your CSS file link below -->
+    <!--<link rel="stylesheet" href="styles.css">-->
+</head>
+<body>
+
+    <header>
+        <!-- Header content goes here -->
+	<h1>Brand Ownership Database</h1>
+	<p>This project is based on the data from https://cancelthisclothingcompany.com/resources/,
+	@cancelthisclothingstore's website for storing grocery store brand ownership data publicly.
+	His process was going into a store and indexing each product by Brand, Owner, and Ownership
+	Type.</p>
+    </header>
+
+    <nav>
+        <!-- Navigation menu -->
+	<a href="http://loin.cs.brynmawr.edu/~mrabayda/BrandOwnership/Databases%20HW2%20-%20Brands.csv" target="_blank">Brand CSV File</a><br>	
+	<a
+	href="http://loin.cs.brynmawr.edu/~mrabayda/BrandOwnership/Databases%20HW2%20-%20Categories.csv"
+	target="_blank">Categories CSV File</a><br>	
+	<a
+	href="http://loin.cs.brynmawr.edu/~mrabayda/BrandOwnership/Databases%20HW2%20-%20Subcategories.csv"
+	target="_blank">Subcategories CSV File</a><br>	
+	<a
+	href="http://loin.cs.brynmawr.edu/~mrabayda/BrandOwnership/Databases%20HW2%20-%20SubCategoryJunction.csv"
+	target="_blank">Subcategory Junction CSV</a><br>	
+    </nav>
+
+    <main>
+        <!-- Main content goes here -->
+	<hr>
+	<img src="http://loin.cs.brynmawr.edu/~mrabayda/BrandOwnership/BrandOwnership.svg"
+	alt="Database Schema">
+	<hr>
+
+	<h1>Database Structure and Interconnections</h1>
+
+    <h2>Table Definitions</h2>
+
+    <h3>Categories Table</h3>
+    <p><b>Category_ID:</b> Integer. The unique identifier for each category. Primary Key.</p>
+    <p><b>Category_Name:</b> Varchar. The name of the category, such as "Fitness", "Personal Care", or "Food".</p>
+    <p><b>Description:</b> Text. A brief description of what the category entails.</p><br>
+
+    <h3>Subcategories Table</h3>
+    <p><b>Subcategory_ID:</b> Integer. The unique identifier for each subcategory. Primary Key.</p>
+    <p><b>Category_ID:</b> Integer. Foreign Key that references Category_ID in the Categories table. Indicates the main category to which the subcategory belongs.</p>
+    <p><b>Subcategory_Name:</b> Varchar. The name of the subcategory, such as "Vitamins", "Supplements" within the Fitness category.</p>
+    <p><b>Description:</b> Text. A brief description of what the subcategory entails.</p><br>
+
+    <h3>Brands Table</h3>
+    <p><b>Brand_ID:</b> Integer. The unique identifier for each brand. Primary Key.</p>
+    <p><b>Brand:</b> Varchar. The name of the brand.</p>
+    <p><b>Owner:</b> Varchar. The company or entity that owns the brand.</p>
+    <p><b>Ownership Type:</b> Varchar. The classification of the owner, such as 'Founder owned',
+    'Family Owned', or 'Megacorp'.</p>
+    <p><b>Notes:</b> Text. Any relevant notes about the brand or its ownership.</p><br>
+
+    <h3>BrandSubcategoryJunction Table</h3>
+    <p><b>scj_id:</b> Integer. The unique identifier for each record in this junction table. Primary Key.</p>
+    <p><b>Brand_ID:</b> Integer. Foreign Key that references Brand_ID in the Brands table.</p>
+    <p><b>Subcategory_ID:</b> Integer. Foreign Key that references Subcategory_ID in the
+    Subcategories table.</p><br><hr>
+
+    <h2>Interconnections Description</h2>
+    <p>The <strong>Categories</strong> and <strong>Subcategories</strong> tables are interconnected
+    through a one-to-many relationship. Each category can encompass multiple subcategories, but each
+    subcategory is exclusive to one category, as indicated by the Category_ID in the Subcategories
+    table.</p>
+
+    <p>The <strong>Brands</strong> table is linked to the <strong>Categories</strong> table via a one-to-many relationship. Each brand is associated with one category, which is signified by the CategoryID in the Brands table.</p>
+
+    <p>A many-to-many relationship exists between the <strong>Brands</strong> and <strong>Subcategories</strong> tables, facilitated by the <strong>BrandSubcategoryJunction</strong> table. This setup allows a brand to be linked to multiple subcategories and vice versa. The junction table uses BrandID to reference the Brands table and SubcategoryID to reference the Subcategories table, enabling this complex relationship.</p>
+
+    </main>
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+
+    <!-- Add your JavaScript file below -->
+    <script src="script.js"></script>
+</body>
+</html>
