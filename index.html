@@ -70,17 +70,25 @@
     subcategory is exclusive to one category, as indicated by the Category_ID in the Subcategories
     table.</p>
 
-    <p>The <strong>Brands</strong> table is linked to the <strong>Categories</strong> table via a one-to-many relationship. Each brand is associated with one category, which is signified by the CategoryID in the Brands table.</p>
+    <p>The <strong>Brands</strong> table is linked to the <strong>Categories</strong> table via a
+    one-to-many relationship. Each brand is associated with one category, which is shown by the CategoryID in the Brands table.</p>
 
-    <p>A many-to-many relationship exists between the <strong>Brands</strong> and <strong>Subcategories</strong> tables, facilitated by the <strong>BrandSubcategoryJunction</strong> table. This setup allows a brand to be linked to multiple subcategories and vice versa. The junction table uses BrandID to reference the Brands table and SubcategoryID to reference the Subcategories table, enabling this complex relationship.</p>
+    <p>A many-to-many relationship exists between the <strong>Brands</strong> and
+    <strong>Subcategories</strong> tables, facilitated by the
+    <strong>BrandSubcategoryJunction</strong> table. This setup allows a brand to be linked to
+    multiple subcategories and vice versa. The junction table uses BrandID to reference the
+    Brands table and SubcategoryID to reference the Subcategories table.</p>
 
     </main>
 
     <footer>
         <!-- Footer content -->
-	<hr><p>This project is based on the data from https://cancelthisclothingcompany.com/resources/,
-	@cancelthisclothingstore's website for storing grocery store brand ownership data publicly.
-	His process was going into a store and indexing each product by Brand, Owner, and Ownership
+	<hr><p>This project is based on the data from:</p><a
+	href="https://cancelthisclothingcompany.com/resources/">https://cancelthisclothingcompany.com/resources/</a><p> 
+	This data was do sourced by
+	@cancelthisclothingstore's (on Tiktok) website for storing grocery store brand ownership data publicly.
+	His process is taking pictures of aisles at the grocery store and going through each
+	brand of products and indexing by Brand, Owner, and Ownership
 	Type.</p>
     </footer>
 
