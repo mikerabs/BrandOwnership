@@ -1,0 +1,584 @@
+Owner_ID,Owner,Ownership Type
+1,Mars,Megacorp
+2,Unilever,Megacorp
+3,Kraft-Heinz,Megacorp
+4,Church & Dwight,Megacorp
+5,Congo Brands,Founder owned/Private equity backed
+6,Hain Celestial Group,Megacorp
+7,Alessi family,Family owned
+8,Harris family,Family owned
+9,Kellogg's,Megacorp
+10,The Hershey Company,Megacorp
+11,Post,Megacorp
+12,Next World Evergreen,Private Equity
+13,Jess Sturzenegger,Female founder owned
+14,Nature's Path,Founder Family Owned
+15,Koch Industries,Megacorp
+16,General Mills,Megacorp
+17,General Mills,Megacorp
+18,Kellogg's,Megacorp
+19,GSK,Megacorp
+20,Maxingvest AG,Megacorp
+21,Britta Cox and Suveen Sahib,Female founder owned and her husband
+22,Don Voltagio,Founder owned
+23,Church & Dwight,Megacorp
+24,Dr. Ali Syed,Founder owned
+25,Jean-Francois Bernier,Privately owned
+26,Nadya Okamoto & Nick Jain,Founder Owned
+27,House of Cheatham,Privately owned
+28,General Mills,Megacorp
+29,Procter & Gamble,Megacorp
+30,Johnson & Johnson,Megacorp
+31,Johnson & Johnson,Megacorp
+32,Unilever,Megacorp
+33,Patrick K Roman,Founder owned
+34,Unilever,Megacorp
+35,Jennifer Carlson and Jill Vos,Female founder owned
+36,Unibel,Megacorp (French)
+37,Barilla,Megacorp
+38,Monster Beverage Corp,Megacorp
+39,Post,Megacorp
+40,The Hershey Company,Megacorp
+41,General Mills,Megacorp
+42,Inspire Brands,Private Equity
+43,Church & Dwight,Megacorp
+44,Oetker Group,Family megacorp
+45,Kellogg's,Megacorp
+46,Beaverton Foods,Family owned
+47,Unilever via Toni & Guy,Megacorp
+48,Bernatello's Foods,Ramsay Family
+49,Unilever,Megacorp
+50,Conagra Brands,Megacorp
+51,Mizkan Group,Megacorp
+52,Main Post Partners,Private Equity
+53,Unilever,Megacorp
+54,Post,Megacorp
+55,Tim McCollum,Founder owned
+56,Harbin Pharmaceutical,Megacorp
+57,Bigelow Family,Family owned
+58,Glanbia Plc,Megacorp
+59,Kao Corporation,Megacorp
+60,Evan Hafer,Founder owned
+61,Farmer's co-op,Co-op
+62,Laura Modi & Sarah Hardy,Female founder owned
+63,Coca-cola,Megacorp
+64,Eleeo Brands,Private Equity
+65,Charlie Investors,Private Equity
+66,Daniel Giraudo,Family owned
+67,Prestige Consumer Healthcare Inc,Megacorp
+68,Procter & Gamble,Megacorp
+69,Post,Megacorp
+70,Koch Industries,Megacorp
+71,Dare foods,Family owned
+72,Unilever,Megacorp
+73,La Costena,Megacorp
+74,Jeff & Ryan Gardner,Founder family owned
+75,Clorox,Megacorp
+76,Clorox,Megacorp
+77,Ferrero Group,Family owned
+78,Doss Cunningham with megacorp backing,Megacorp
+79,Cardenas family,Family owned
+80,J. M. Smucker,Megacorp
+81,Gruma Corp.,Megacorp
+82,Nestle,Megacorp
+83,King juice company,Private Equity
+84,Boiron,Megacorp
+85,Janelle Evans,Female founder owned
+86,PDC brands,Private Equity
+87,PepsiCo,Megacorp
+88,Johnson & Johnson,Megacorp
+89,L'oreal,Megacorp
+90,Pladis Global,Megacorp
+91,Mike Broadwell & Mark Christensen,Founder owned
+92,Catalina Crunch,Founder Owned
+93,Gail Becker,Founder owned
+94,Celcius holdings,Megacorp
+95,Hain Celestial Group,Megacorp
+96,Haleon,Megacorp
+97,L'Oreal,Megacorp
+98,Dr. Teresa Pursner & Nick Langan,Female founder owned
+99,"Clarion Brands, LLC",Private Equity
+100,Galderma- Owned by EQT + Abu Dhabi Investment Authority (ADIA),Megacorp
+101,Procter & Gamble,Megacorp
+102,Pergola family,Family owned PE backed
+103,General Mills,Megacorp
+104,PepsiCo,Megacorp
+105,Kellanova,Megacorp
+106,General Mills,Megacorp
+107,Farouk Shami,uhhh.... founder big money owned?...
+108,Nabisco,Megacorp
+109,Kevin Buck,Founder owned
+110,Timothy Moley,Founder owned
+111,Butterfly Equity,Private Equity
+112,General Mills,Megacorp
+113,JAB holding company,Megacorp
+114,Kraft-Heinz,Megacorp
+115,Johnson & Johnson,Megacorp
+116,Rachel Peters,Female Founder Owned
+117,Simon Ostler,Founder owned I think
+118,Unilever,Megacorp
+119,Kellanova,Megacorp
+120,Post,Megacorp
+121,General Mills,Megacorp
+122,SLG brands,Private Equity
+123,Colgate Palmolive,Megacorp
+124,General Mills,Megacorp
+125,Molly Haward,Female Founder Owned
+126,Kellogg's,Megacorp
+127,Kellogg's,Megacorp
+128,Kimberly-Clark,Megacorp
+129,Lion Equity Partners,Private Equity
+130,Kellogg's,Megacorp
+131,Procter & Gamble,Megacorp
+132,C. Cretors & Co,Family Owned
+133,Kellogg's,Megacorp
+134,Nature's Path,Founder Family Owned
+135,Private Equity,Private Equity
+136,Anheuser Busch,Megacorp
+137,Mahisha Dellinger,Female founder owned
+138,Michael Brown,Founder owned
+139,Unilever,Megacorp
+140,Topix Pharmaceuticals,Private Equity
+141,Johnson & Johnson,Megacorp
+142,Galderma- Owned by EQT + Abu Dhabi Investment Authority (ADIA),Megacorp
+143,Nestle,Megacorp
+144,Post,Megacorp
+145,JAB Holding Company,Megacorp
+146,PepsiCo,Megacorp
+147,Hershey's,Megacorp
+148,Unilever,Megacorp
+149,Bronner's family,Family owned
+150,Gary Taneja,Privately owned
+151,Jack Haldrop,Founder owned- private equity backed
+152,Nestle,Megacorp
+153,Main Post Partners,Private Equity
+154,Inspire Brands,Private Equity
+155,Inspire Brands,Private Equity
+156,Post Holdings Inc,Megacorp
+157,The Hain Celestial Group,Megacorp
+158,Nobody knows,Effing mystery
+159,Minesh Patel,Founder owned
+160,Joel Dee,Family owned
+161,LordPharaoh ImHotepAmonRa,Founder owned
+162,Tata Group,Megacorp
+163,Pfizer,Megacorp
+164,Wayne Zink & Randy Deer,Privately owned
+165,Reckitt Benckiser Group,Megacorp
+166,Employee owned,Employee owned Co-op
+167,Walmart,Megacorp
+168,Erin Baker's,Founder Family Owned
+169,Bansk Group,Private Equity
+170,Private Equity,Private Equity
+171,Food For Life,Founder Family Owned
+172,Risa Barash,Female founder owned
+173,MTY franchising,Private Equity
+174,MTY Food Group,Megacorp
+175,Post,Megacorp
+176,Ferrero Group,Family owned
+177,General Mills,Megacorp
+178,Bright Food,Megacorp
+179,PT Sinar Mas Group (Eka Tjipta Widjaja & Family),Megacorp
+180,Matel,Megacorp
+181,J. M. Smucker,Megacorp
+182,Forager Project,Founder Owned
+183,McCormick,Megacorp
+184,McCormick,Megacorp
+185,Schwan's Consumer Brands,CJ CheilJedang
+186,Hutcherson Family,Family owned
+187,Saputo family,Family owned
+188,PepsiCo,Megacorp
+189,Aaron Greenwald & Private Equity,Private Equity
+190,Kellogg's,Megacorp
+191,Kellogg's,Megacorp
+192,Kellogg's,Megacorp
+193,Nature's Path,Founder Family Owned
+194,Zahir Dossa,Founder owned
+195,Clifford Morgan,Founder owned
+196,Lactalis,Megacorp (French)
+197,Nestle,Megacorp
+198,L'oreal,Megacorp
+199,Pepsico,Megacorp
+200,Nestle,Megacorp
+201,Gerber,Megacorp
+202,Kraft Heinz,Megacorp
+203,Chocoladefabriken Lindt & Sprüngli AG,Megacorp
+204,Dan Lourenco & Ryan Hughes,"Megacorporate-backed, founder owned"
+205,Procter & Gamble,Megacorp
+206,HACO,Private Equity
+207,Michael Bischoff Jr.,Founder owned
+208,Retail food group,Megacorp
+209,Tyson Foods,Megacorp
+210,Harbin Pharmaceutical,Megacorp
+211,Coca-cola,Megacorp
+212,Post,Megacorp
+213,General Mills,Megacorp
+214,Campbell's Soup Company,Megacorp
+215,Michael Bitensky,Founder owned
+216,Mondelez International,Megacorp
+217,Kimberly-Clark,Megacorp
+218,Nature's Path,Founder Family Owned
+219,Post,Megacorp
+220,Post,Megacorp
+221,Walmart,Megacorp
+222,Unique Beverage Co,Founder owned
+223,JAB Holding Company,Megacorp
+224,Kraft-Heinz,Megacorp
+225,General Mills,Megacorp
+226,Procter & Gamble,Megacorp
+227,Danone,Megacorp
+228,Inspired Beauty Brands,Private Equity
+229,Utz Brands,Megacorp
+230,JAB holding company,Megacorp
+231,Procter & Gamble,Megacorp
+232,Lauren Culbreth,Founder owned
+233,The Hershey Company,Megacorp
+234,Kraft-Heinz,Megacorp
+235,Colgate-Palmolive,Megacorp
+236,Procter & Gamble,Mega corporation
+237,Nature's Path,Founder Family Owned
+238,Nature's Path,Founder Family Owned
+239,HGGC,Private Equity
+240,Church & Dwight,Megacorp
+241,Hims & Hers Health Inc.,Megacorp
+242,The Hershey Company,Megacorp
+243,The Hershey Company,Megacorp
+244,David Smith,Founder owned
+245,Clorox,Megacorp
+246,High Key Snacks,Founder Owned
+247,Mezzanine capital Maven Hill Capital,Private Equity
+248,Post,Megacorp
+249,Post,Megacorp
+250,Post,Megacorp
+251,Kellogg's,Megacorp
+252,Post,Megacorp
+253,Mondelez International,Megacorp
+254,Kimberly-Clark,Megacorporation
+255,Jeff Shardell,Founder Owned
+256,Conagra Brands,Megacorp
+257,Standard Homeopathic Co,Private Equity?
+258,Glanbia Plc,Megacorp
+259,Carolyn Aronson,Female founder owned
+260,Hain Celestial Group,Megacorp
+261,John Freida,Founder owned
+262,Johnson & Johnson,Megacorporation
+263,Capetown Toiletry company,Mystery money
+264,Dominguez Family Foods,Family Owned
+265,Dominguez Family Foods,Family Owned
+266,La Costena,Megacorp
+267,Tootsie Roll Industries,Megacorp
+268,Jim Stoppani,Founder owned
+269,Paul Newman and Ari Lee-Newman,Founder owned
+270,Michael McClane,Founder owned I think?
+271,Nehemia Manufacturing,Private Equity?
+272,Kellogg's,Megacorp
+273,Crowley & Hannah families,Family owned
+274,Kendal Nutricare,Family owned
+275,Henkel,Mega corporation
+276,La Costena,Megacorp
+277,Nature's Path,Founder Family Owned
+278,Ferrero Group,Family owned
+279,Ignite,Private Equity
+280,Shelley Davis,Female founder owned
+281,The Hershey Company,Megacorp
+282,General Mills,Megacorp
+283,Kimberly-Clark,Megacorp
+284,Nature's Path,Founder Family Owned
+285,Kimberly-Clark,Megacorp
+286,Kraft-Heinz,Megacorp
+287,Kellogg's,Megacorp
+288,L'Oreal,Megacorp
+289,L'Oreal,Megacorp
+290,Campbell's Soup Company,Megacorporation
+291,Landman Family,Family owned
+292,Langer family,Family owned
+293,PepsiCo,Megacorp
+294,Kraft-Heinz,Megacorp
+295,Dare foods,Family owned
+296,PepsiCo,Megacorp
+297,Ben & Jade Bower,Founder Owned
+298,Pepsico,Megacorp
+299,The Hershey Company,Megacorp
+300,Chocoladefabriken Lindt & Sprüngli AG,Megacorp
+301,Pepsico/Unilever,Megacorp
+302,Unilever,Megacorp
+303,Prestige Consumer Healthcare Inc,Megacorporation
+304,"Lisa Barnett, Angela Vranich, Michelle Muller, and Ben Lewis",Founder owned
+305,Alex Friedman & Jordana Kier,Female Founder Owned
+306,MidOcean,Private Equity
+307,Nature's Path,Founder Family Owned
+308,Johnson & Johnson,Megacorp
+309,Albertsons,Megacorp
+310,General Mills,Megacorp
+311,Harry's,Private Equity
+312,Procter & Gamble,Megacorporation
+313,Jane May Graves,Female Founder Owned
+314,Reily Family,Family owned
+315,Mars,Megacorp
+316,Oliver Zak & Selom Agbitor,Founder owned
+317,The Bronner Family,Family owned
+318,Magic Spoon,Founder Owned
+319,Post,Megacorp
+320,Post,Megacorp
+321,Amazon,Megacorp
+322,Katzev family,Family owned
+323,MAV,Private equity/insider controlled corporation
+324,Marinelli family,Family owned
+325,Kameda Seika,Japanese Megacorp
+326,Johnson & Johnson,Mega corporation
+327,McDonald's,Megacorp
+328,Axel Oberwelland,Family Owned
+329,Nature's Path,Founder Family Owned
+330,S.C. Johnson & Son,Private Equity
+331,Jeff Mezzetta & Family,Family Owned
+332,Revlon- Ronald Perelman,Private Equity
+333,Procter & Gamble,Mega corporation
+334,Mars,Megacorp
+335,Bary Robbins & David Levy,"Founder owned, PE backed"
+336,Coca-Cola,Megacorp
+337,Kraft-Heinz,Megacorp
+338,Miko Branch,Female founder owned
+339,Gruma Corp.,Megacorp
+340,Post,Megacorp
+341,Zuru Edge,Privately owned
+342,Monster Beverage Corp,Megacorp
+343,Eugenia Akuete,Founder owned
+344,JAB holding company,Megacorp
+345,Privately Owned,Privately owned
+346,Kellogg's,Megacorp
+347,Xiwang Foodstuffs,Megacorp
+348,Sue Ismiel,Founder owned
+349,Conagra Brands,Megacorporation
+350,Magnano Family,Family owned
+351,GSK,Megacorp
+352,Procter & Gamble,Megacorp
+353,Susie Hewson,Female Founder Owned
+354,Aurobindo Pharma USA inc.,Mega Corporation
+355,Otsuka Pharmaceutical Co.,Mega Corporation
+356,Nestle,Mega Corporation
+357,Schwabe Group,Mega Corporation
+358,Johnson & Johnson,Megacorp
+359,The Newman's Own Foundation,Private Non-Profit
+360,Migros,Co-op
+361,Heather K. Terry & Private Equity backers,complicated
+362,Nestle,Megacorporation
+363,Monster Beverage Corp,Megacorp
+364,Bethany and Rocky Pagliarulo,Founder family owned
+365,Value Max Products,Private Equity
+366,Ahmed Rahim and Reem Hassani,Family owned
+367,Reckitt Benckiser Group,Megacorporation
+368,Albertson's,Megacorporation
+369,General Mills,Megacorp
+370,Edgewell Personal Care,Megacorp
+371,Co-op,Farmer's Co-op
+372,"Shannon, Britta, Lindsay",Female Founder owned
+373,Bani Bahari & Jonathan Lawrence,Family owned
+374,Johnson & Johnson,Mega corporation
+375,The Hershey Company,Megacorp
+376,Jordan Morrow & Worth Anne Herrell,Female Founder owned
+377,Advent International,Private Equity
+378,Procter & Gamble,Megacorp
+379,Procter & Gamble,Megacorp
+380,Unilever,Mega Corporation
+381,Jennifer Garner & John Foraker,Founder owned
+382,Bayer,Mega Corporation
+383,One Mighty Mill,Founder owned
+384,Glanbia Plc,Megacorp
+385,Church & Dwight,Megacorporation
+386,Randy Buresh and Pam Martin-Buresh,Family Owned
+387,Post,Megacorp
+388,David Sandoval,Founder owned
+389,Jeff Lichtenstein,Family owned
+390,Co-op,Farmer's Co-op
+391,Employee Owned,Employee Owned
+392,"Litehouse, Inc",Employee owned
+393,Brook Harvey Taylor and husband,Female Founder owned
+394,Procter & Gamble,Megacorporation
+395,Nature's Path,Founder Family Owned
+396,Procter & Gamble,Mega corporation
+397,Walmart,Megacorp
+398,Harris family,Family owned
+399,Yvon Chouinard,Founder owned
+400,Coca-cola,Megacorp
+401,Spell Capital Partners,Private Equity
+402,Post,Megacorp
+403,Abbott Labs,Megacorporation
+404,JAB Holding Company,Megacorp
+405,Haleon,Megacorp
+406,Procter & Gamble,Mega corporation
+407,Brad Pyatt,Founder owned-mega corp backed
+408,Edgewell Personal Care,Megacorp
+409,HACO,Private Equity
+410,Sun-Maid,Co-op
+411,"Mat Fraser, Heber Cannon and Marston Sawyers (aka the “Buttery Bros”), Paul Haverland ",Founder owned
+412,Auricchio family (Bel Gioioso),Family owned
+413,Unilever,Megacorp
+414,Jeff Bergadine & Michael Deal,Founder owned
+415,Coca-cola,Megacorp
+416,Campbell's Soup Company,Mega Corporation
+417,Post,Megacorp
+418,Nabisco,Megacorporation
+419,Congo Brands,Private Equity
+420,Pepsico,Megacorp
+421,Post,Megacorp
+422,Procter & Gamble,Megacorp
+423,Kimberly-Clark,Megacorporation
+424,Branded Group,Private Equity
+425,JM brands,Private Equity
+426,PepsiCo,Megacorp
+427,Koch Industries,Megacorp
+428,Mizkan Group,Mega Corporation
+429,Nick Keller,Founder owned
+430,Kellogg's,Megacorp
+431,General Mills,Megacorp
+432,Campbell's Soup Company,Mega Corporation
+433,Donda Mullis & Ronnie Shugar,Founder Family Owned
+434,Aida and Lidia,Female Founder owned
+435,Schwan's Consumer Brands,CJ CheilJedang
+436,Mateschitz & Yoovidhya families,Family owned
+437,The Hershey Company,Megacorp
+438,General Mills,Megacorp
+439,Coca-Cola,Megacorp
+440,MAV,Private equity/insider controlled corporation
+441,Boohoo is largest shareholder,Corporation (maybe mega?)
+442,SLG brands,Private Equity
+443,Kellogg's,Megacorp
+444,Grisi,Megacorporation
+445,Thriving Brands,Private Equity
+446,Mondelez International,Megacorporation
+447,Julissa Prado,Female Founder owned
+448,Brown & Haley,Family Owned
+449,Pepsico,Megacorp
+450,The Hershey Company,Megacorp
+451,Bernatello's Foods,Ramsay Family
+452,PepsiCo,Megacorp
+453,Rumiano family,Family owned
+454,Smuckers,Megacorp
+455,Noelle Deysel & Nic Stella,Founder owned
+456,George Weston Limited,Private Equity
+457,Iskra Laurence,Influencer founder owned- PE backed
+458,Smuckers,Megacorp
+459,Gentine family,Family owned
+460,Unilever,Megacorp
+461,Kimberly-Clark,Megacorp
+462,Fallucca Family,Family owned
+463,Shiseido,Megacorp
+464,Nestle,Megacorp
+465,Coty- JAB holding company,Mega corporation
+466,Procter & Gamble,Megacorp
+467,GSK + Pfizer,Megacorp
+468,Serenity & Joe Carr,Family owned
+469,TH Foods Inc.,Privately owned
+470,Henkel,Mega corporation
+471,Tengram Capital Partners,Private Equity
+472,Unilever,Mega corporation
+473,Unilever,Megacorporation
+474,Post,Megacorp
+475,United Bakeries Group,Megacorporation
+476,Albertson's,Megacorporation
+477,Abbott Labs,Megacorporation
+478,Unilever,Megacorp
+479,Katlin Smith,Female Founder owned
+480,Kroger,Mega Corporation
+481,Mars,Megacorp
+482,Dean & Steven Neiger,Founder led
+483,Nature's Path,Founder Family Owned
+484,Kellogg's,Megacorp
+485,PepsiCo,Megacorp
+486,The Dee Family,Family owned
+487,Coca-cola,Megacorp
+488,Mars,Megacorp
+489,Post,Megacorp
+490,Campbells Soup,Megacorp
+491,Atalanta Corporation,Megacorporation
+492,Utz Brands,Megacorp
+493,Koch Industries,Megacorp
+494,Kellogg's,Megacorp
+495,Colgate-Palmolive,Megacorp
+496,Neptune Wellness Solutions,Megacorp
+497,Huy Fong Foods,Family owned
+498,Unilever,Megacorp
+499,Starbucks,Megacorp
+500,Energizer,Megacorp
+501,Treehouse Foods,Megacorporation
+502,Nestle,Megacorp
+503,McCormick,Megacorp
+504,Unilever,Mega corporation
+505,SC Johnson & co,Mega corporation
+506,PepsiCo,Megacorp
+507,Co-op,Farmer's Co-op
+508,Ken's Foods,Family owned
+509,Post,Megacorp
+510,Post,Megacorp
+511,Grupo Bimbo,Megacorp
+512,Unilever,Megacorp
+513,Procter & Gamble,Megacorp
+514,CVC Capital Partners,Private Equity
+515,Starbucks,Megacorp
+516,Tata consumer products,Megacorp
+517,Chris-Tia Donaldson,Female Founder owned
+518,Maya Smith,Female Founder owned
+519,Lauren Scholte Wang,Female Founder owned
+520,Beatrice Dixon,Female Founder and Family Owned
+521,Peter Harris,Privately owned
+522,American Licorice Company,Privately owned
+523,Procter & Gamble,Megacorp
+524,Co-op,Farmer's Co-op
+525,Restaurant Brands International,Megacorp
+526,Utz Brands,Megacorp
+527,"Sofia Laurell, Betsy Fore, Carolyn O'hare",Female Founder owned
+528,Colgate-Palmolive,Megacorp
+529,Nestle,Megacorp
+530,Colgate Palmolive,Megacorp
+531,Schwan's Consumer Brands,CJ CheilJedang
+532,Henk Jan Beltman,Founder owned
+533,Tootsie Roll Industries,Megacorp
+534,PepsiCo,Megacorp
+535,General Mills,Megacorp
+536,General Mills,Megacorp
+537,Kellanova,Megacorporation
+538,Taraji P Henson,Female Founder owned
+539,Sadler Family,Family owned
+540,Co-op,Farmer's Co-op
+541,Unilever,Mega corporation
+542,Mondelez International,Megacorporation
+543,General Mills,Megacorp
+544,Pepsico,Megacorp
+545,JAB Holding Company,Megacorp
+546,Lenny Kravitz & Julian & Cody Levine,Founder owned
+547,Associated British Foods,Megacorp
+548,Mars,Megacorp
+549,Kimberly-Clark,Megacorp
+550,Feldkamp family,Family owned
+551,Renee Morris,Female bought and owned!
+552,Post,Megacorp
+553,Unique Snacks,Family Owned
+554,The Bronner Family,Family owned
+555,Psyche Terry,Female Founder owned
+556,Campbell's Soup,Megacorp
+557,Unilever,Megacorporation
+558,WM Partners,Private Equity
+559,Procter & Gamble and Helen of Troy,Mega Corporation
+560,Dare foods,Family owned
+561,sketchy,complicated
+562,Church & Dwight,Mega Corporation
+563,Kimberly-Clark,Megacorp
+564,Church & Dwight,Mega corporation
+565,Conagra Brands,Megacorporation
+566,Post,Megacorp
+567,HKW,Private Equity
+568,Barilla,Megacorporation
+569,Post,Megacorp
+570,Co-op,Farmer's Co-op
+571,General Mills,Megacorp
+572,Deric Cahill & Brooklynn Cahill,Family founder owned!
+573,Piazza family,Family owned
+574,Unilever,Megacorp
+575,David Portnoy,Founder owned
+576,Doss Cunningham with megacorp backing,Megacorp backed
+577,Juste went public,Megacorp
+578,"Drew Sutherland, David Cooper, and Glenn Baginski",Founder owned
+579,The Hershey Company,Megacorp
+580,Kraft Heinz,Megacorp
+581,Angela Sutherland & Evelyn Rusli,Female Founder owned
+582,Johnson & Johnson,Megacorporation
+583,Kellanova,Megacorporation
