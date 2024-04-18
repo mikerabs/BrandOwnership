@@ -1,0 +1,25 @@
+{
+  "name": "brandownership",
+  "version": "1.0.0",
+  "description": "a website to display brand ownership details from products you could find at a grocery store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikerabs/BrandOwnership.git"
+  },
+  "author": "Mike Rabayda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikerabs/BrandOwnership/issues"
+  },
+  "homepage": "https://github.com/mikerabs/BrandOwnership#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "pg": "^8.11.5"
+  }
+}

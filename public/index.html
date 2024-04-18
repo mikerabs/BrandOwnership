@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Database Interface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Brand Information Database</h1>
+        <div>
+            <input type="radio" id="mongo" name="database" value="MongoDB">
+            <label for="mongo">MongoDB</label>
+            <input type="radio" id="postgres" name="database" value="PostgreSQL" checked>
+            <label for="postgres">PostgreSQL</label>
+        </div>
+        <!-- Example of a query interface -->
+        <div id="queryBuilder">
+            <!-- Populate this with JavaScript based on selected DB -->
+        </div>
+        <button onclick="runQuery()">Run Query</button>
+        <div id="results">
+            <!-- Query results will be displayed here -->
+        </div>
+    </div>
+</body>
+</html>
+
