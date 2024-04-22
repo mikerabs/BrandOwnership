@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;  // Ensure this port is free on your server
+const port = process.env.PORT || 3913;  // Ensure this port is free on your server
 const mongoClient = require('./db/mongo');
 const pgPool = require('./db/postgres');
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static('public'));  // Serve static files from 'public' directory
 
 app.listen(port, () => {

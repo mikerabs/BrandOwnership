@@ -17,13 +17,9 @@
             <input type="radio" id="postgres" name="database" value="PostgreSQL" checked>
             <label for="postgres">PostgreSQL</label>
         </div>
-        <!-- Example of a query interface -->
-        <div id="queryBuilder">
-            <!-- Populate this with JavaScript based on selected DB -->
-        </div>
-        <button onclick="runQuery()">Run Query</button>
-        <div id="results">
-            <!-- Query results will be displayed here -->
+	<button onclick="loadQueryInterface()">Create Query</button>
+        <div id="queryInterface"></div>
+        <div id="results"></div>
         </div>
     </div>
 </body>
