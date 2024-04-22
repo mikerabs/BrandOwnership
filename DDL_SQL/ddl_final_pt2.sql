@@ -21,14 +21,14 @@ SELECT DISTINCT c.Category_ID, s.Subcategory
 FROM staging_brands s
 JOIN Categories2 c ON s.Category = c.Category_Name
 WHERE s.Subcategory IS NOT NULL
-ON CONFLICT (Category_ID, Subcategory_Name) DO UPDATE SET ...;
+ON CONFLICT (Category_ID, Subcategory_Name) DO NOTHING; 
 
 -- Insert into Brands table from staging, handling duplicates
 INSERT INTO Brands2 (Brand, Owner_ID, Notes)
 SELECT DISTINCT s.Brand, o.Owner_ID, s.Notes
 FROM staging_brands s
 JOIN Owners2 o ON s.Owner = o.Owner
-ON CONFLICT (Brand, Owner_ID) DO UPDATE SET ...;  -- Assuming a unique constraint on (Brand, Owner_ID)
+ON CONFLICT (Brand, Owner_ID) DO NOTHING;-- Assuming a unique constraint on (Brand, Owner_ID)
 
 -- Insert into BrandSubcategoryJunction table from staging
 INSERT INTO BrandSubcategoryJunction2 (Brand_ID, Subcategory_ID)

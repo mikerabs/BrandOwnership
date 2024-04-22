@@ -18,8 +18,7 @@ CREATE TABLE Subcategories2 (
         Category_ID INT NOT NULL,
 	    Subcategory_Name VARCHAR(255) NOT NULL,
 	        Description TEXT,
-		    FOREIGN KEY (Category_ID) REFERENCES Categories2(Category_ID) ON DELETE CASCADE,
-		    UNIQUE (Category_ID, Subcategory_Name)
+		    FOREIGN KEY (Category_ID) REFERENCES Categories2(Category_ID) ON DELETE CASCADE
 		    );
 
 
@@ -36,8 +35,7 @@ CREATE TABLE Brands2 (
         Brand VARCHAR(255) NOT NULL,
 	    Owner_ID INT NOT NULL,
 	        Notes TEXT,
-		    FOREIGN KEY (Owner_ID) REFERENCES Owners2(Owner_ID) ON DELETE CASCADE,
-		    UNIQUE (Brand, Owner_ID)
+		    FOREIGN KEY (Owner_ID) REFERENCES Owners2(Owner_ID) ON DELETE CASCADE
 		    );
 
 
@@ -46,9 +44,15 @@ CREATE TABLE BrandSubcategoryJunction2 (
         Brand_ID INT NOT NULL,
 	    Subcategory_ID INT NOT NULL,
 	        FOREIGN KEY (Brand_ID) REFERENCES Brands2(Brand_ID) ON DELETE CASCADE,
-		    FOREIGN KEY (Subcategory_ID) REFERENCES Subcategories2(Subcategory_ID) ON DELETE
-		    CASCADE
+		    FOREIGN KEY (Subcategory_ID) REFERENCES Subcategories2(Subcategory_ID) ON DELETE CASCADE
 		    );
+
+-- Create table constraints using ALTER
+ALTER TABLE Subcategories2 ADD UNIQUE (Category_ID, Subcategory_Name);
+ALTER TABLE Brands2 ADD UNIQUE (Brand, Owner_ID);
+ALTER TABLE Owners2 ADD UNIQUE (Owner);  -- Add this if not implicitly declared during creation.
+ALTER TABLE BrandSubcategoryJunction2 ADD UNIQUE (Brand_ID, Subcategory_ID);  -- Optional if you expect uniqueness
+
 
 
 -- Load data into temporary staging table
