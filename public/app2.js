@@ -9,12 +9,58 @@ function loadQueryInterface() {
     `; 
     // Further dynamic UI loading based on selected database
 }
+
 function setupOwnershipTypeQuery(dbType) {
     const queryDiv = document.getElementById('queryInterface');
-    queryDiv.innerHTML = `<h4>${dbType} - Ownership Type, Category, Subcategory Query</h4>
-    <p>Configure your query parameters here...</p>`;
-    // Add form or inputs here for this specific query
+    queryDiv.innerHTML = `
+        <h4>${dbType} - Ownership Type, Category, Subcategory Query</h4>
+        <form id="ownershipTypeForm">
+            <label for="ownershipType">Ownership Type:</label>
+            <select id="ownershipType" onchange="updateSubcategoryOptions()">
+                <option value="B-Corp">B-Corp</option>
+                <option value="Co-Op">Co-Op</option>
+                <option value="Complicated">Complicated</option>
+                <option value="Employee Owned">Employee Owned</option>
+                <option value="Family Owned">Family megacorp, Family owned, Family owned PE backed</option>
+                <option value="Farmer’s Cooperative">Farmer’s Cooperative</option>
+                <option value="Founder Owned">Female founder owned, Founder family owned, Founder owned-mega corp backed, Founder owned/Private equity backed, Megacorporate-backed, founder owned</option>
+                <option value="Megacorporation">Megacorporation</option>
+                <option value="Private Company">Private Company</option>
+                <option value="Private Equity">Private Equity</option>
+                <option value="Private Non-Profit">Private Non-Profit</option>
+                <option value="Privately Owned">Privately Owned</option>
+                <option value="sketchy">sketchy</option>
+                <option value="Unknown">Corporation (maybe mega?), Founder owned - Probably, Mystery Money, Private Equity?</option>
+            </select>
+            <label for="category">Category:</label>
+            <select id="category" onchange="updateSubcategoryOptions()">
+                <option value="Fitness">Fitness</option>
+                <option value="Food">Food</option>
+                <option value="Household & Misc.">Household & Misc.</option>
+                <option value="Personal Care">Personal Care</option>
+            </select>
+            <label for="subcategory">Subcategory:</label>
+            <select id="subcategory">
+                <!-- Subcategories will be dynamically loaded here -->
+            </select>
+            <button type="button" onclick="runOwnershipQuery()">Run Query</button>
+        </form>
+    `;
+    updateSubcategoryOptions(); // Initial call to load subcategories for the default category
 }
+
+function updateSubcategoryOptions() {
+    const category = document.getElementById('category').value;
+    const subcategorySelect = document.getElementById('subcategory');
+    const subcategories = {
+        "Fitness": ["Supplements", "Vitamins"],
+        "Food": ["Cereal", "Chips & Snacks", "Baby Food", "Baby Formula", "Pasta Sauce", "Pickles", "Coffee", "Candy", "Frozen Pizza", "Cheese", "Juice", "Drinks", "Sauces & Dressings", "Energy Drinks", "Ice Cream", "Tea", "Crackers"],
+        "Household & Misc.": ["Household Cleaners", "Laundry Detergent"],
+        "Personal Care": ["Feminine Hygiene", "Deoderant", "Shampoo", "Toothpaste", "Skincare", "Baby Products", "Toilet Paper/Paper Towels"]
+    };
+    subcategorySelect.innerHTML = subcategories[category].map(sub => `<option value="${sub}">${sub}</option>`).join('');
+}
+
 
 function setupInterestingBrandsQuery(dbType) {
     const queryDiv = document.getElementById('queryInterface');
@@ -50,5 +96,27 @@ function displayResults(data) {
     const resultsDiv = document.getElementById('results');
     // Render data as a table
     resultsDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+}
+
+// AJAX example for running a query
+function runOwnershipQuery() {
+    // Collect data from form
+    // AJAX POST request to your server with data
+    $.ajax({
+        url: `/query/ownershipType`,
+        type: 'POST',
+        data: {
+            dbType: document.querySelector('input[name="database"]:checked').value,
+            ownershipType: document.getElementById('ownershipType').value,
+            category: document.getElementById('category').value,
+            subcategory: document.getElementById('subcategory').value
+        },
+        success: function(data) {
+            displayResults(data);
+        },
+        error: function(error) {
+            console.error('Error fetching data:', error);
+        }
+    });
 }
 
