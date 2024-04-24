@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3913;  // Ensure this port is free on your server
-const mongoClient = require('./db/mongo');
-const pgPool = require('./db/postgres');
+const port = process.env.PORT || 3913;  // Ensure this port is free on server
+//const mongoClient = require('./db/mongo');
+//const pgPool = require('./db/postgres');
+const pgPool = require('./pg_pool');  // Importing the pool configured in pgpool.js
+require('dotenv').config();
+
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
@@ -59,3 +62,28 @@ app.post('/query/MongoDB', async (req, res) => {
     }
 });
 
+app.post('/query/ownershipType', async (req, res) => {
+    const { dbType, ownershipType, category, subcategory } = req.body;
+
+    if (dbType === "PostgreSQL") {
+        // Construct the SQL query
+        const query = `
+            SELECT * FROM brands2
+            JOIN categories2 ON brands2.category_id = categories2.id
+            JOIN subcategories2 ON brands2.subcategory_id = subcategories2.id
+            JOIN ownership_types2 ON brands2.ownership_id = ownership_types2.id
+            WHERE ownership_types.type = $1 AND categories2.name = $2 AND subcategories2.name = $3;
+        `;
+
+        try {
+            const { rows } = await pgPool.query(query, [ownershipType, category, subcategory]);
+            res.json(rows); // Send back the results to the client
+        } catch (error) {
+            console.error('Failed to execute query:', error);
+            res.status(500).send('Failed to retrieve data');
+        }
+    } else {
+        // Add MongoDB handling logic here if needed
+        res.status(400).send('Invalid database type selected');
+    }
+});
