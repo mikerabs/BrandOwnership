@@ -1,10 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3913;  // Ensure this port is free on server
+const port = process.env.PORT || 30913;  // Ensure this port is free on server
 //const mongoClient = require('./db/mongo');
 //const pgPool = require('./db/postgres');
 const pgPool = require('./pg_pool');  // Importing the pool configured in pgpool.js
-require('dotenv').config();
 
 
 // Middleware to parse JSON and URL-encoded data
