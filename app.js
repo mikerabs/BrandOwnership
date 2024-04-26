@@ -67,14 +67,32 @@ app.post('/query/ownershipType', async (req, res) => {
 
     if (dbType === "PostgreSQL") {
         // Construct the SQL query
-        const query = `
-            SELECT * FROM brands2
+        const query = `SELECT
+			    b.brand,
+			    o.owner,
+				b.notes
+			    FROM
+				brands2 b
+			    JOIN
+				owners2 o ON b.owner_id = o.owner_id
+			    JOIN
+				brandsubcategoryjunction2 bsj ON b.brand_id = bsj.brand_id
+			    JOIN
+			    subcategories2 s ON bsj.subcategory_id = s.subcategory_id
+			    JOIN
+			    categories2 c ON s.category_id = c.category_id
+			    WHERE
+			    o.ownership_type = $1
+			    AND c.category_name = $2
+			    AND s.subcategory_name = $3;
+                    `;
+
+	/*SELECT * FROM brands2
             JOIN categories2 ON brands2.category_id = categories2.id
             JOIN subcategories2 ON brands2.subcategory_id = subcategories2.id
             JOIN ownership_types2 ON brands2.ownership_id = ownership_types2.id
             WHERE ownership_types.type = $1 AND categories2.name = $2 AND subcategories2.name = $3;
-        `;
-
+	*/
         try {
             const { rows } = await pgPool.query(query, [ownershipType, category, subcategory]);
             res.json(rows); // Send back the results to the client
