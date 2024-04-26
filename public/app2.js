@@ -92,10 +92,44 @@ function runQuery() {
     });
 }
 
-function displayResults(data) {
+/*function displayResults(data) {
     const resultsDiv = document.getElementById('results');
     // Render data as a table
     resultsDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+}*/
+
+function displayResults(data) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    const table = document.createElement('table');
+    table.className = 'table table-striped'; // Bootstrap class for styling
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+
+    // Setting up headers
+    const headerRow = document.createElement('tr');
+    ['Brand', 'Owner', 'Notes'].forEach(headerText => {
+        const header = document.createElement('th');
+        header.textContent = headerText;
+        headerRow.appendChild(header);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Inserting data into the table
+    data.forEach(row => {
+        const tr = document.createElement('tr');
+        Object.values(row).forEach(text => {
+            const td = document.createElement('td');
+            td.textContent = text;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+    });
+
+    table.appendChild(tbody);
+    resultsDiv.appendChild(table);
 }
 
 // AJAX example for running a query
