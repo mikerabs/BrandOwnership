@@ -13,7 +13,7 @@ function loadQueryInterface() {
 function setupOwnershipTypeQuery(dbType) {
     const queryDiv = document.getElementById('queryInterface');
     queryDiv.innerHTML = `
-        <h4>${dbType} - Ownership Type, Category, Subcategory Query</h4>
+        <h4>${dbType} - Subcategory Query</h4>
         <form id="ownershipTypeForm">
             <label for="ownershipType">Ownership Type:</label>
             <select id="ownershipType" onchange="updateSubcategoryOptions()">
@@ -23,14 +23,14 @@ function setupOwnershipTypeQuery(dbType) {
                 <option value="Employee Owned">Employee Owned</option>
                 <option value="Family Owned,Family owned,Family megacorp,Family owned PE backed">Family Owned</option>
                 <option value="Farmer’s Cooperative">Farmer’s Cooperative</option>
-                <option value="Founder Owned">Female founder owned, Founder family owned, Founder owned-mega corp backed, Founder owned/Private equity backed, Megacorporate-backed, founder owned</option>
+                <option value="Founder owned, Female founder owned, Founder family owned, Founder owned-mega corp backed, Founder owned/Private equity backed, ' Megacorporate-backed,founder owned'">Founder Owned</option>
                 <option value="Megacorporation">Megacorporation</option>
                 <option value="Private Company">Private Company</option>
                 <option value="Private Equity">Private Equity</option>
                 <option value="Private Non-Profit">Private Non-Profit</option>
                 <option value="Privately Owned">Privately Owned</option>
                 <option value="sketchy">sketchy</option>
-                <option value="Unknown">Corporation (maybe mega?), Founder owned - Probably, Mystery Money, Private Equity?</option>
+                <option value="Corporation (maybe mega?), Founder owned - Probably, Mystery Money, Private Equity?">Unknown</option>
             </select>
             <label for="category">Category:</label>
             <select id="category" onchange="updateSubcategoryOptions()">
@@ -102,6 +102,10 @@ function displayResults(data) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // Clear previous results
 
+	 if (data.length === 0) {
+        // If no data is returned, display a 'No Results Found' message
+        resultsDiv.innerHTML = '<p>No Results Found.</p>';
+    } else {
     const table = document.createElement('table');
     table.className = 'table table-striped'; // Bootstrap class for styling
     const thead = document.createElement('thead');
@@ -130,6 +134,7 @@ function displayResults(data) {
 
     table.appendChild(tbody);
     resultsDiv.appendChild(table);
+	}
 }
 
 // AJAX example for running a query
