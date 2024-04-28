@@ -17,11 +17,11 @@ function setupOwnershipTypeQuery(dbType) {
         <form id="ownershipTypeForm">
             <label for="ownershipType">Ownership Type:</label>
             <select id="ownershipType" onchange="updateSubcategoryOptions()">
-                <option value="B-Corp">B-Corp</option>
-                <option value="Co-Op">Co-Op</option>
-                <option value="Complicated">Complicated</option>
+                <option value="B-corp">B-Corp</option>
+                <option value="Co-op">Co-Op</option>
+                <option value="complicated">Complicated</option>
                 <option value="Employee Owned">Employee Owned</option>
-                <option value="Family Owned">Family megacorp, Family owned, Family owned PE backed</option>
+                <option value="Family Owned,Family owned,Family megacorp,Family owned PE backed">Family Owned</option>
                 <option value="Farmer’s Cooperative">Farmer’s Cooperative</option>
                 <option value="Founder Owned">Female founder owned, Founder family owned, Founder owned-mega corp backed, Founder owned/Private equity backed, Megacorporate-backed, founder owned</option>
                 <option value="Megacorporation">Megacorporation</option>

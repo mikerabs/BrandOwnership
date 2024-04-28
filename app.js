@@ -43,7 +43,7 @@ app.post('/query/ownershipType', async (req, res) => {
 			    JOIN
 			    categories2 c ON s.category_id = c.category_id
 			    WHERE
-			    o.ownership_type = $1
+			    o.ownership_type = ANY($1::text[]) 
 			    AND c.category_name = $2
 			    AND s.subcategory_name = $3;
                     `;
@@ -55,7 +55,10 @@ app.post('/query/ownershipType', async (req, res) => {
             WHERE ownership_types.type = $1 AND categories2.name = $2 AND subcategories2.name = $3;
 	*/
         try {
-            const { rows } = await pgPool.query(query, [ownershipType, category, subcategory]);
+	    const ownershipTypesArray = ownershipType.split(',');
+            const { rows } = await pgPool.query(query, [ownershipTypesArray, category, subcategory]);
+	    console.log(ownershipType);
+	    console.log(ownershipTypesArray);
             res.json(rows); // Send back the results to the client
         } catch (error) {
             console.error('Failed to execute query:', error);
