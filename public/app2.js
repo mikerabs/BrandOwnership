@@ -124,11 +124,23 @@ function displayResults(data) {
     // Inserting data into the table
     data.forEach(row => {
         const tr = document.createElement('tr');
-        Object.values(row).forEach(text => {
+	Object.entries(row).forEach(([key, value]) => {
+                const td = document.createElement('td');
+                if (key === 'brand') {
+                    const a = document.createElement('a');
+                    a.href = `brand-details.html?brand=${encodeURIComponent(value)}`;
+                    a.textContent = value;
+                    td.appendChild(a);
+                } else {
+                    td.textContent = value;
+                }
+                tr.appendChild(td);
+            });	
+       /* Object.values(row).forEach(text => {
             const td = document.createElement('td');
             td.textContent = text;
             tr.appendChild(td);
-        });
+        });*/
         tbody.appendChild(tr);
     });
 
