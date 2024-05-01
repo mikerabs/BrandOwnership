@@ -10,7 +10,20 @@ const pgPool = require('./pg_pool');  // Importing the pool configured in pgpool
 
 // Middleware to parse JSON and URL-encoded data
 const cors = require('cors');
+const { MongoClient } = require('mongodb');
+const mongoUrl = 'mongodb://localhost:27017'; // Default MongoDB connection URL for localhost
+const mongoClient = new MongoClient(mongoUrl);
 
+async function connectMongoDB() {
+    try {
+        await mongoClient.connect();
+        console.log('Connected to MongoDB');
+    } catch (error) {
+        console.error('Could not connect to MongoDB:', error);
+    }
+}
+
+connectMongoDB();
 
 
 
@@ -21,27 +34,6 @@ app.use(express.static('public'));  // Serve static files from 'public' director
 
 
 //Functions
-
-async function fetchWikipediaImage(searchTerm) {
-    // First, find the Wikipedia page for the brand
-    let pageUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(searchTerm)}&format=json`;
-    try {
-        let response = await fetch(pageUrl);
-        let data = await response.json();
-        let pageId = data.query.search[0].pageid; // Get the page ID of the first search result
-
-        // Then, fetch the page details to get the main image
-        let imageUrl = `https://en.wikipedia.org/w/api.php?action=query&pageids=${pageId}&prop=pageimages&format=json&pithumbsize=500`;
-        response = await fetch(imageUrl);
-        data = await response.json();
-        let imageData = data.query.pages[pageId].thumbnail.source;
-
-        return imageData;
-    } catch (error) {
-        console.error('Failed to retrieve image from Wikipedia:', error);
-        return null; // Return null if there's an error or no image found
-    }
-}
 
 
 
@@ -102,6 +94,28 @@ app.post('/query/ownershipType', async (req, res) => {
         }
     } else {
         // Add MongoDB handling logic here if needed
+	try {
+            const db = mongoClient.db("mrabayda"); // Specify your database name
+            const collection = db.collection("tempBrands"); // Specify your collection name
+
+            // Query for documents
+	    const documents = await collection.find({
+                "Ownership Type": { $in: ownershipType.split(',') },
+                "Category": category,
+                "Subcategory": subcategory
+            }, {
+                projection: {
+                    _id: 0, // Exclude the _id field
+                    Brand: 1, // Include the Brand field
+                    Owner: 1, // Include the Owner field
+                    Notes: 1 // Include the Notes field
+                }}).toArray();
+
+            res.json(documents);            
+        } catch (error) {
+            console.error('Failed to execute MongoDB query:', error);
+            res.status(500).send('Failed to retrieve data from MongoDB');
+        }
         res.status(400).send('Invalid database type selected');
     }
 });
