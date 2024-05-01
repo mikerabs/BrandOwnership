@@ -121,8 +121,34 @@ function displayResults(data) {
     thead.appendChild(headerRow);
     table.appendChild(thead);
 
-    // Inserting data into the table
     data.forEach(row => {
+            const tr = document.createElement('tr');
+            // Normalize the keys to lowercase to handle differences between databases
+            const normalizedRow = {};
+            Object.keys(row).forEach(key => {
+                normalizedRow[key.toLowerCase()] = row[key];
+            });
+
+            // Process normalized data
+            ['brand', 'owner', 'notes'].forEach(key => {
+                const td = document.createElement('td');
+                if (key === 'brand') {
+                    const a = document.createElement('a');
+                    a.href = `brand-details.html?brand=${encodeURIComponent(normalizedRow[key])}`;
+                    a.textContent = normalizedRow[key];
+                    td.appendChild(a);
+                } else {
+                    td.textContent = normalizedRow[key] || ''; // Handle undefined cases
+                }
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+
+        table.appendChild(tbody);
+        resultsDiv.appendChild(table);
+    }    // Inserting data into the table
+    /*data.forEach(row => {
         const tr = document.createElement('tr');
 	Object.entries(row).forEach(([key, value]) => {
                 const td = document.createElement('td');
@@ -136,19 +162,15 @@ function displayResults(data) {
                 }
                 tr.appendChild(td);
             });	
-       /* Object.values(row).forEach(text => {
-            const td = document.createElement('td');
-            td.textContent = text;
-            tr.appendChild(td);
-        });*/
+    
         tbody.appendChild(tr);
     });
 
     table.appendChild(tbody);
     resultsDiv.appendChild(table);
-	}
-}
+	}*/
 
+}
 // AJAX example for running a query
 function runOwnershipQuery() {
     // Collect data from form

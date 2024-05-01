@@ -116,7 +116,7 @@ app.post('/query/ownershipType', async (req, res) => {
             console.error('Failed to execute MongoDB query:', error);
             res.status(500).send('Failed to retrieve data from MongoDB');
         }
-        res.status(400).send('Invalid database type selected');
+        //res.status(400).send('Invalid database type selected');
     }
 });
 app.get('/api/brand-details', async (req, res) => {
