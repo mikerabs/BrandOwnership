@@ -106,45 +106,44 @@ app.post('/query/ownershipType', async (req, res) => {
     }
 });
 app.get('/api/brand-details', async (req, res) => {
-    const { brand } = req.query; // Assuming 'brand' is a unique identifier or name passed as a query parameter
+   const { brand } = req.query;
+    if (!brand) {
+        return res.status(400).send("Brand parameter is required.");
+    }
 
-    // Adjusted SQL query to retrieve detailed information
     const query = `
         SELECT 
-            b.Brand,
-            o.Owner,
-            o.Ownership_Type,
-            c.Category_Name,
-            s.Subcategory_Name,
-            b.Notes
+            b.brand,
+            o.owner,
+            o.ownership_type,
+            c.category_name,
+            s.subcategory_name,
+            b.notes
         FROM 
-            Brands2 b
+            brands2 b
         JOIN 
-            Owners2 o ON b.Owner_ID = o.Owner_ID
+            owners2 o ON b.owner_id = o.owner_id
         JOIN 
-            BrandSubcategoryJunction2 bsj ON b.Brand_ID = bsj.Brand_ID
+            brandsubcategoryjunction2 bsj ON b.brand_id = bsj.brand_id
         JOIN 
-            Subcategories2 s ON bsj.Subcategory_ID = s.Subcategory_ID
+            subcategories2 s ON bsj.subcategory_id = s.subcategory_id
         JOIN 
-            Categories2 c ON s.Category_ID = c.Category_ID
+            categories2 c ON s.category_id = c.category_id
         WHERE 
-            b.Brand = $1;`;
+            b.brand = $1;
+    `;
 
     try {
-	console.log("Attempting Query");
-        const { rows } = await pgPool.query(query, [brand]); // Execute the query with the brand parameter
-	console.log("Queried successfully")
+        const { rows } = await pgPool.query(query, [brand.trim()]); // Using trim() to handle any extra whitespace
         if (rows.length > 0) {
-            const imageUrl = await fetchWikipediaImage(brand); // Fetch the image URL from Wikipedia
-	    console.log("Image Found")
-            const brandDetails = {...rows[0], imageUrl}; // Combine SQL data with the image URL
-            res.json(brandDetails);
+            res.json(rows[0]);
+		console.log(rows[0]);
         } else {
             res.status(404).send('Brand not found');
         }
     } catch (error) {
         console.error('Failed to retrieve brand details:', error);
         res.status(500).send('Server error');
-    }
+    } 
 });
 
