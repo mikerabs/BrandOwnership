@@ -4,20 +4,54 @@
     <meta charset="UTF-8">
     <title>Brand Details</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .brand-card {
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #e3e6f0;
+            border-radius: 0.35rem;
+            padding: 20px;
+        }
+        .brand-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 0.35rem 0.35rem 0 0;
+        }
+        .detail-heading {
+            color: #007bff;
+            margin-top: 10px;
+        }
+        .notes {
+            white-space: pre-line; /* Ensures that whitespace and line breaks are preserved */
+        }
+        a.back-link {
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-4">
-        <h1 id="brand-name"></h1>
-	<h2 id="owner"></h2>
-	<h2 id="ownership-type"></h2>
-	<h2 id="category"><h2>
-	<h3 id="subcategory"></h3>
-	<p id="notes"></p>
-        <a href="/">Back to List</a>
+        <div class="brand-card">
+            <div class="brand-header">
+                <h1 id="brand-name"></h1>
+            </div>
+            <h4 class="detail-heading">Owner:</h4>
+            <p id="owner"></p>
+            <h4 class="detail-heading">Ownership Type:</h4>
+            <p id="ownership-type"></p>
+            <h4 class="detail-heading">Category:</h4>
+            <p id="category"></p>
+            <h4 class="detail-heading">Subcategory:</h4>
+            <p id="subcategory"></p>
+            <h4 class="detail-heading">Notes:</h4>
+            <p id="notes" class="notes"></p>
+            <a href="/" class="back-link btn btn-primary">Back to List</a>
+        </div>
     </div>
 
     <script src="brand-details.js"></script>
 </body>
 </html>
-
 
