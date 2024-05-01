@@ -1,19 +1,29 @@
 function loadQueryInterface() {
     const dbType = document.querySelector('input[name="database"]:checked').value;
     const queryInterface = document.getElementById('queryInterface');
-    queryInterface.innerHTML = `
+    /*queryInterface.innerHTML = `
         <br><h3>Loading query interface for ${dbType}...</h3>
         <button onclick="setupOwnershipTypeQuery('${dbType}')">Owership Type Search</button>
         <button onclick="setupInterestingBrandsQuery('${dbType}')">Feeling Lucky</button>
         <button onclick="setupAdvancedSearch('${dbType}')">Advanced Search</button>
-    `; 
+    `;*/
+    queryInterface.innerHTML = `
+        <div class="mt-4 mb-4">
+            <h3 class="mb-3">Loading query interface for ${dbType}...</h3>
+            <div class="d-grid gap-2 d-md-block">
+                <button class="btn btn-primary btn-lg" onclick="setupOwnershipTypeQuery('${dbType}')">Ownership Type Search</button>
+                <button class="btn btn-secondary btn-lg" onclick="setupInterestingBrandsQuery('${dbType}')">Feeling Lucky</button>
+                <button class="btn btn-success btn-lg" onclick="setupAdvancedSearch('${dbType}')">Advanced Search</button>
+            </div>
+        </div>
+    `;
     // Further dynamic UI loading based on selected database
 }
 
 function setupOwnershipTypeQuery(dbType) {
     const queryDiv = document.getElementById('queryInterface');
-    queryDiv.innerHTML = `
-        <h4>${dbType} - Subcategory Query</h4>
+    /*queryDiv.innerHTML = `
+        <h4>${dbType} - Ownership Type Query</h4>
         <form id="ownershipTypeForm">
             <label for="ownershipType">Ownership Type:</label>
             <select id="ownershipType" onchange="updateSubcategoryOptions()">
@@ -45,7 +55,50 @@ function setupOwnershipTypeQuery(dbType) {
             </select>
             <button type="button" onclick="runOwnershipQuery()">Run Query</button>
         </form>
-    `;
+    `;*/
+	queryDiv.innerHTML = `
+    <h4>${dbType} - Ownership Type Query</h4>
+    <form id="ownershipTypeForm" class="mt-3">
+        <div class="form-group">
+            <label for="ownershipType">Ownership Type:</label>
+            <select id="ownershipType" class="form-control" onchange="updateSubcategoryOptions()">
+                <!-- options -->
+		<option value="B-corp">B-Corp</option>
+                <option value="Co-op">Co-Op</option>
+                <option value="complicated">Complicated</option>
+                <option value="Employee Owned">Employee Owned</option>
+                <option value="Family Owned,Family owned,Family megacorp,Family owned PE backed">Family Owned</option>
+                <option value="Farmer’s Cooperative">Farmer’s Cooperative</option>
+                <option value="Founder owned, Female founder owned, Founder family owned, Founder owned-mega corp backed, Founder owned/Private equity backed, ' Megacorporate-backed,founder owned'">Founder Owned</option>
+                <option value="Megacorporation">Megacorporation</option>
+                <option value="Private Company">Private Company</option>
+                <option value="Private Equity">Private Equity</option>
+                <option value="Private Non-Profit">Private Non-Profit</option>
+                <option value="Privately Owned">Privately Owned</option>
+                <option value="sketchy">sketchy</option>
+                <option value="Corporation (maybe mega?), Founder owned - Probably, Mystery Money, Private Equity?">Unknown</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" class="form-control" onchange="updateSubcategoryOptions()">
+                <!-- options -->
+		<option value="Fitness">Fitness</option>
+                <option value="Food">Food</option>
+                <option value="Household & Misc.">Household & Misc.</option>
+                <option value="Personal Care">Personal Care</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="subcategory">Subcategory:</label>
+            <select id="subcategory" class="form-control">
+                <!-- Subcategories will be dynamically loaded here -->
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="runOwnershipQuery()">Run Query</button>
+    </form>
+`;
+
     updateSubcategoryOptions(); // Initial call to load subcategories for the default category
 }
 
