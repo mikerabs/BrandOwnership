@@ -161,3 +161,60 @@ app.get('/api/brand-details', async (req, res) => {
     } 
 });
 
+app.post('/query/interestingbrands', async (req, res) => {
+
+    const { dbType } = req.body;
+    if(dbType === "PostgreSQL"){
+	const query = `SELECT
+			b.brand AS Brand,
+			    o.owner AS Owner,
+			    o.ownership_type AS Ownership_Type,
+			    b.notes AS Notes
+			FROM
+			    brands2 b
+			JOIN
+			    owners2 o ON b.owner_id = o.owner_id
+			WHERE
+			    b.notes IS NOT NULL;
+			`; 
+	try {
+	     const { rows } = await pgPool.query(query);// Using trim() to handle any extra whitespace
+	     if (rows.length > 0) {
+		 res.json(rows);
+		 console.log(rows[0]);
+	     } else {
+		 res.status(404).send('Brands not found');
+	     }
+	     } catch (error) {
+		 console.error('Failed to retrieve interesting brand details:', error);
+		 res.status(500).send('Server error');
+	     }
+    } else {
+	try {
+	    const db = mongoClient.db("mrabayda"); // Specify your database name
+	    const collection = db.collection("tempBrands"); // Specify your collection name
+
+	    // Query for documents
+	    const documents = await collection.find({
+		"Notes": { $exists: true, $ne: "" } // Add condition for Notes field
+		}, {
+		    projection: {
+			_id: 0, // Exclude the _id field
+			Brand: 1, // Include the Brand field
+			Owner: 1, // Include the Owner field
+			'Ownership Type': 1,
+			Category: 1,
+			Subcategory: 1,
+			Notes: 1 // Include the Notes field
+		    }
+		}).toArray();
+
+	    res.json(documents);
+	    } catch (error) {
+		console.error('Failed to execute MongoDB query:', error);
+		res.status(500).send('Failed to retrieve data from MongoDB');
+	    }
+    } 
+	
+
+});

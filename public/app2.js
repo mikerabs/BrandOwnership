@@ -8,9 +8,9 @@ function loadQueryInterface() {
         <button onclick="setupAdvancedSearch('${dbType}')">Advanced Search</button>
     `;*/
     queryInterface.innerHTML = `
-        <div class="mt-4 mb-4">
+        <div class="mt-4 mb-4" style="text-align: center;">
             <h3 class="mb-3">Loading query interface for ${dbType}...</h3>
-            <div class="d-grid gap-2 d-md-block">
+            <div class="d-grid gap-2 d-md-block" style="text-align: center;">	
                 <button class="btn btn-primary btn-lg" onclick="setupOwnershipTypeQuery('${dbType}')">Ownership Type Search</button>
                 <button class="btn btn-secondary btn-lg" onclick="setupInterestingBrandsQuery('${dbType}')">Feeling Lucky</button>
                 <button class="btn btn-success btn-lg" onclick="setupAdvancedSearch('${dbType}')">Advanced Search</button>
@@ -117,9 +117,9 @@ function updateSubcategoryOptions() {
 
 function setupInterestingBrandsQuery(dbType) {
     const queryDiv = document.getElementById('queryInterface');
-    queryDiv.innerHTML = `<h4>${dbType} - Interesting Brands Search</h4>
-    <p>Search for brands with notes on specific subcategories...</p>`;
-    // Add form or inputs here for this specific query
+    queryDiv.innerHTML =	`<div style="text-align: center;">
+			<button type="button" class="btn btn-primary" onclick="interestingBrandsQuery()">Run Query</button>
+			</div>`;
 }
 
 function setupAdvancedSearch(dbType) {
@@ -282,7 +282,6 @@ function displayResults(data) {
 // AJAX example for running a query
 function runOwnershipQuery() {
     // Collect data from form
-    // AJAX POST request to your server with data
     $.ajax({
         url: `/query/ownershipType`,
         type: 'POST',
@@ -291,6 +290,22 @@ function runOwnershipQuery() {
             ownershipType: document.getElementById('ownershipType').value,
             category: document.getElementById('category').value,
             subcategory: document.getElementById('subcategory').value
+        },
+        success: function(data) {
+            displayResults(data);
+        },
+        error: function(error) {
+            console.error('Error fetching data:', error);
+        }
+    });
+}
+function interestingBrandsQuery() {
+    // Collect data from form
+    $.ajax({
+        url: `/query/interestingbrands`,
+        type: 'POST',
+        data: {
+            dbType: document.querySelector('input[name="database"]:checked').value,
         },
         success: function(data) {
             displayResults(data);
