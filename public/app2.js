@@ -12,7 +12,8 @@ function loadQueryInterface() {
             <h3 class="mb-3">Loading query interface for ${dbType}...</h3>
             <div class="d-grid gap-2 d-md-block" style="text-align: center;">	
                 <button class="btn btn-primary btn-lg" onclick="setupOwnershipTypeQuery('${dbType}')">Ownership Type Search</button>
-                <button class="btn btn-secondary btn-lg" onclick="setupInterestingBrandsQuery('${dbType}')">Feeling Lucky</button>
+                <button class="btn btn-secondary btn-lg"
+		onclick="setupInterestingBrandsQuery('${dbType}')">Interesting Brands</button>
                 <button class="btn btn-success btn-lg" onclick="setupAdvancedSearch('${dbType}')">Advanced Search</button>
             </div>
         </div>
