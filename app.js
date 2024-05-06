@@ -218,3 +218,55 @@ app.post('/query/interestingbrands', async (req, res) => {
 	
 
 });
+app.post('/query/subcategory', async (req, res) => {
+    const { dbType, category, subcategory } = req.body;
+
+    if(dbType === "PostgreSQL"){
+	const query = `
+        SELECT
+            b.brand AS Brand,
+            o.owner AS Owner,
+            o.ownership_type AS Ownership_Type,
+            b.notes AS Notes,
+            c.category_name AS Category,
+            s.subcategory_name AS Subcategory
+        FROM
+            brands2 b
+        JOIN
+            brandsubcategoryjunction2 bsj ON b.brand_id = bsj.brand_id
+        JOIN
+            subcategories2 s ON bsj.subcategory_id = s.subcategory_id
+        JOIN
+            categories2 c ON s.category_id = c.category_id
+        JOIN
+            owners2 o ON b.owner_id = o.owner_id
+        WHERE
+            c.category_name = $1
+        AND
+            s.subcategory_name = $2
+        AND
+            b.notes IS NOT NULL;
+	`;
+
+	try {
+	    const { rows } = await pgPool.query(query, [category, subcategory]);
+	    if (rows.length > 0) {
+		res.json(rows);
+	    } else {
+		res.status(404).send('No brands found matching the specified category and subcategory.');
+	    }
+	} catch (error) {
+	    console.error('Error querying the database:', error);
+	    res.status(500).send('Server error');
+	}
+
+
+    }else {
+	//Mongo IMplementation	    
+
+
+
+
+
+    }
+    });

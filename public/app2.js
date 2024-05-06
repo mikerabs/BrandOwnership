@@ -14,7 +14,8 @@ function loadQueryInterface() {
                 <button class="btn btn-primary btn-lg" onclick="setupOwnershipTypeQuery('${dbType}')">Ownership Type Search</button>
                 <button class="btn btn-secondary btn-lg"
 		onclick="setupInterestingBrandsQuery('${dbType}')">Interesting Brands</button>
-                <button class="btn btn-success btn-lg" onclick="setupAdvancedSearch('${dbType}')">Advanced Search</button>
+                <button class="btn btn-success btn-lg"
+		onclick="setupSubcategorySearch('${dbType}')">Subcategory Search</button>
             </div>
         </div>
     `;
@@ -123,10 +124,31 @@ function setupInterestingBrandsQuery(dbType) {
 			</div>`;
 }
 
-function setupAdvancedSearch(dbType) {
+function setupSubcategorySearch(dbType) {
     const queryDiv = document.getElementById('queryInterface');
-    queryDiv.innerHTML = `<h4>${dbType} - Advanced Search</h4>
-    <p>Advanced query setup for Brand, Owner, Ownership Type, Category, and Subcategory.</p>`;
+    queryDiv.innerHTML = `<h4>${dbType} - Subcategory Search</h4>
+    <form id="subcategoryForm" class="mt-3">
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" class="form-control" onchange="updateSubcategoryOptions()">
+                <!-- options -->
+		<option value="Fitness">Fitness</option>
+                <option value="Food">Food</option>
+                <option value="Household & Misc.">Household & Misc.</option>
+                <option value="Personal Care">Personal Care</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="subcategory">Subcategory:</label>
+            <select id="subcategory" class="form-control">
+                <!-- Subcategories will be dynamically loaded here -->
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="runSubcategoryQuery()">Run Query</button>
+    </form>
+`;
+  
+    updateSubcategoryOptions(); // Initial call to load subcategories for the default category
     // Add form or inputs here for this specific query
 }
 
@@ -307,6 +329,24 @@ function interestingBrandsQuery() {
         type: 'POST',
         data: {
             dbType: document.querySelector('input[name="database"]:checked').value,
+        },
+        success: function(data) {
+            displayResults(data);
+        },
+        error: function(error) {
+            console.error('Error fetching data:', error);
+        }
+    });
+}
+function subcategoryQuery() {
+    // Collect data from form
+    $.ajax({
+        url: `/query/subcategory`,
+        type: 'POST',
+        data: {
+            dbType: document.querySelector('input[name="database"]:checked').value,
+	    category: document.getElementById('category').value,
+	    subcategory: document.getElementById('subcategory').value
         },
         success: function(data) {
             displayResults(data);
