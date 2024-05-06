@@ -243,9 +243,7 @@ app.post('/query/subcategory', async (req, res) => {
         WHERE
             c.category_name = $1
         AND
-            s.subcategory_name = $2
-        AND
-            b.notes IS NOT NULL;
+            s.subcategory_name = $2;
 	`;
 
 	try {
@@ -264,9 +262,35 @@ app.post('/query/subcategory', async (req, res) => {
     }else {
 	//Mongo IMplementation	    
 
+	try {
+	    const collection = mongoClient.db('mrabayda').collection('tempBrands');
 
+	    const results = await collection.find(
+		{
+		    Category: category,
+		    Subcategory: subcategory
+		},
+		{
+                projection: {
+                    Brand: 1,
+                    Owner: 1,
+                    "Ownership Type": 1,
+                    Notes: 1,
+                    Category: 1,
+                    Subcategory: 1
+                }
+		}
+	    ).toArray();
 
-
-
+//	    console.log(results);
+	    if (results.length > 0) {
+		res.json(results);
+	    } else {
+		res.status(404).send('No brands found matching the specified category and subcategory.');
+	    }
+	    } catch (error) {
+		console.error('Error querying the database:', error);
+		res.status(500).send('Server error');
+	    }
     }
-    });
+});	

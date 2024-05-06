@@ -349,7 +349,7 @@ function subcategoryQuery() {
 	    subcategory: document.getElementById('subcategory').value
         },
         success: function(data) {
-            displayResultsSub(data);
+		displayResultsSubMongo(data);
         },
         error: function(error) {
             console.error('Error fetching data:', error);
@@ -408,28 +408,69 @@ function displayResultsSub(data) {
 
 	makeSortable(table); 
     }    // Inserting data into the table
-    /*data.forEach(row => {
-        const tr = document.createElement('tr');
-	Object.entries(row).forEach(([key, value]) => {
+
+}
+
+function displayResultsSubMongo(data) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    if (data.length === 0) {
+        // If no data is returned, display a 'No Results Found' message
+        resultsDiv.innerHTML = '<p>No Results Found.</p>';
+    } else {
+        // Create the table and setup its headers
+        const table = document.createElement('table');
+        table.className = 'table table-striped'; // Bootstrap class for styling
+
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+
+        // Setting up headers
+        const headerRow = document.createElement('tr');
+        ['Brand', 'Owner', 'Ownership Type', 'Notes'].forEach(headerText => {
+            const header = document.createElement('th');
+            header.textContent = headerText;
+            headerRow.appendChild(header);
+        });
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        // Process each row and normalize keys to lowercase
+        data.forEach(row => {
+            const tr = document.createElement('tr');
+
+            // Normalize keys, replacing spaces with underscores
+            const normalizedRow = {};
+            Object.keys(row).forEach(key => {
+                // Convert to lowercase and replace spaces with underscores
+                const normalizedKey = key.toLowerCase().replace(/\s+/g, '_');
+                normalizedRow[normalizedKey] = row[key];
+            });
+
+            // Create table cells using the normalized keys
+            ['brand', 'owner', 'ownership_type', 'notes'].forEach(key => {
                 const td = document.createElement('td');
                 if (key === 'brand') {
+                    // Create a clickable link for the brand
                     const a = document.createElement('a');
-                    a.href = `brand-details.html?brand=${encodeURIComponent(value)}`;
-                    a.textContent = value;
+                    a.href = `brand-details.html?brand=${encodeURIComponent(normalizedRow[key])}`;
+                    a.textContent = normalizedRow[key];
                     td.appendChild(a);
                 } else {
-                    td.textContent = value;
+                    td.textContent = normalizedRow[key] || ''; // Handle undefined cases
                 }
                 tr.appendChild(td);
-            });	
-    
-        tbody.appendChild(tr);
-    });
+            });
 
-    table.appendChild(tbody);
-    resultsDiv.appendChild(table);
-	}*/
+            tbody.appendChild(tr);
+        });
 
-   // Initialize Sortable on the created table
+        table.appendChild(tbody);
+        resultsDiv.appendChild(table);
+
+        // Add sorting functionality (if applicable)
+        makeSortable(table);
+    }
 }
 
