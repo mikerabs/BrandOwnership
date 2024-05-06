@@ -144,7 +144,7 @@ function setupSubcategorySearch(dbType) {
                 <!-- Subcategories will be dynamically loaded here -->
             </select>
         </div>
-        <button type="button" class="btn btn-primary" onclick="runSubcategoryQuery()">Run Query</button>
+        <button type="button" class="btn btn-primary" onclick="subcategoryQuery()">Run Query</button>
     </form>
 `;
   
@@ -349,11 +349,87 @@ function subcategoryQuery() {
 	    subcategory: document.getElementById('subcategory').value
         },
         success: function(data) {
-            displayResults(data);
+            displayResultsSub(data);
         },
         error: function(error) {
             console.error('Error fetching data:', error);
         }
     });
+}
+function displayResultsSub(data) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+	 if (data.length === 0) {
+        // If no data is returned, display a 'No Results Found' message
+        resultsDiv.innerHTML = '<p>No Results Found.</p>';
+    } else {
+    const table = document.createElement('table');
+    table.className = 'table table-striped'; // Bootstrap class for styling
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+
+    // Setting up headers
+    const headerRow = document.createElement('tr');
+    ['Brand', 'Owner', 'Ownership_Type','Notes'].forEach(headerText => {
+        const header = document.createElement('th');
+        header.textContent = headerText;
+        headerRow.appendChild(header);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    data.forEach(row => {
+            const tr = document.createElement('tr');
+            // Normalize the keys to lowercase to handle differences between databases
+            const normalizedRow = {};
+            Object.keys(row).forEach(key => {
+                normalizedRow[key.toLowerCase()] = row[key];
+            });
+
+            // Process normalized data
+            ['brand', 'owner', 'ownership_type','notes'].forEach(key => {
+                const td = document.createElement('td');
+                if (key === 'brand') {
+                    const a = document.createElement('a');
+                    a.href = `brand-details.html?brand=${encodeURIComponent(normalizedRow[key])}`;
+                    a.textContent = normalizedRow[key];
+                    td.appendChild(a);
+                } else {
+                    td.textContent = normalizedRow[key] || ''; // Handle undefined cases
+                }
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+
+        table.appendChild(tbody);
+        resultsDiv.appendChild(table);
+
+	makeSortable(table); 
+    }    // Inserting data into the table
+    /*data.forEach(row => {
+        const tr = document.createElement('tr');
+	Object.entries(row).forEach(([key, value]) => {
+                const td = document.createElement('td');
+                if (key === 'brand') {
+                    const a = document.createElement('a');
+                    a.href = `brand-details.html?brand=${encodeURIComponent(value)}`;
+                    a.textContent = value;
+                    td.appendChild(a);
+                } else {
+                    td.textContent = value;
+                }
+                tr.appendChild(td);
+            });	
+    
+        tbody.appendChild(tr);
+    });
+
+    table.appendChild(tbody);
+    resultsDiv.appendChild(table);
+	}*/
+
+   // Initialize Sortable on the created table
 }
 
