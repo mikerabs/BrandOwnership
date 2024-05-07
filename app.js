@@ -95,8 +95,8 @@ app.post('/query/ownershipType', async (req, res) => {
     } else {
         // Add MongoDB handling logic here if needed
 	try {
-            const db = mongoClient.db("mrabayda"); // Specify your database name
-            const collection = db.collection("tempBrands"); // Specify your collection name
+            const db = mongoClient.db("mrabayda"); 
+            const collection = db.collection("tempBrands"); 
 
             // Query for documents
 	    const documents = await collection.find({
@@ -191,8 +191,8 @@ app.post('/query/interestingbrands', async (req, res) => {
 	     }
     } else {
 	try {
-	    const db = mongoClient.db("mrabayda"); // Specify your database name
-	    const collection = db.collection("tempBrands"); // Specify your collection name
+	    const db = mongoClient.db("mrabayda"); 
+	    const collection = db.collection("tempBrands");
 
 	    // Query for documents
 	    const documents = await collection.find({

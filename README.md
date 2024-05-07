@@ -16,7 +16,7 @@
 |     Databases HW2 - Categories.csv | File |
 |     Databases HW2 - SubCategoryJunction.csv | File |
 |     Databases HW2 - SubCategoryJunction_fix.csv | File |
-|     Databases HW2 - Subcategories.csv | File |
+|     Databases HW2 - Subcategories.csv | File | Doing all of these separately was not a good idea, see ddl_dource_file for updated CSV
 |     DatabasesHW5-Brands.csv | File |
 |     DatabasesHW5-Owners-update.csv | File |
 |     DatabasesHW5-Owners.csv | File |
@@ -31,8 +31,18 @@
 | pg_pool.js | File | Gets PostgreSQL connected to my Node.js route
 | public/ | Directory |
 |     BON_table.html | File | An attempt at making a standardized table for the JSON to be inputted into, non functional
-|     about.html | File | My updated about page from HW3?4?
+|     about.html | File | My updated about page from HW3?4? - added pictures, updated Mongo structure
 |     app2.js | File | My client side JS that does all the webpage scripts, asynchronous updates
 |     brand-details.html | File | The brand details for the drilldown feature
 |     brand-details.js | File | Client side JS for the drilldown feature HTML
 |     index.html | File | Entry point to the site, contains the query builder
+
+URL:
+http://loin.cs.brynmawr.edu:30913
+
+
+Instructions in case of reboot:
+In /BrandOwnership:
+lsof -i :30913
+kill -9 PID
+nohup node app.js &
